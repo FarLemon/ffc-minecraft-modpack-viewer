@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+:root {
+  --grey-1: 22, 24, 28;
+  --grey-2: 38, 41, 47;
+  --grey-3: 176, 186, 197;
+  --grey-4: 236, 249, 251;
+  --primary: 25, 175, 100;
+
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: default;
+}
+
+
+
+body {
+  color: rgb(var(--grey-4));
+  background-color: rgb(var(--grey-1));
+  font-family: 'Roboto Condensed', sans-serif;
+  width: 100%;
+  padding-bottom: 5em;
+}
+
+
+
+.page__content {
+  width: 80%;
+  max-width: 1700px;
+  margin-inline: auto;
+}
+
+
+
+.modpacks {
+  padding-block: 2em;
+  display: flex;
+  justify-content: center;
+  gap: 3em;
+}
+
+.modpacks__modpack {
+  width: 10em;
+  height: 2.5em;
+  color: inherit;
+  background-color: rgb(var(--primary));
+  font-weight: 500;
+  font-size: 1.25em;
+  border-style: none;
+  border-radius: 0.5em;
+  transition-duration: 0.25s;
+}
+.modpacks__modpack:hover {
+  transform: scale(1.15);
+}
+
+
+
+.modpack {
+  margin-block: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modpack__title {
+  margin: 0;
+  font-size: 4em;
+}
+
+.modpack__author {
+  font-size: 1.25em;
+  color: rgb(var(--grey-3));
+}
+
+
+
+.mods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
+
+.mods__mod {
+  padding: 1.5em;
+  width: 800px;
+  font-size: 1rem;
+  background-color: rgb(var(--grey-2));
+  border-radius: 0.75em;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+  "img title webpage"
+  "img description webpage"
+  "img description webpage"
+  "img description webpage";
+  transition-duration: 0.25s;
+}
+
+.mods__mod:hover {
+  transform: scale(1.05);
+}
+
+.mods__mod__logo {
+  grid-area: img;
+  border-radius: 0.75em;
+  margin-right: 1.5em;
+  place-self: center;
+}
+
+.mods__mod__title {
+  grid-area: title;
+  font-size: 1.75em;
+  display: flex;
+  align-items: center;
+}
+
+.mods__mod__title__name {
+  font-size: 1em;
+  max-width: 15em;
+}
+
+.mods__mod__title__author {
+  font-size: 0.65em;
+  margin-left: 2em;
+  color: rgb(var(--grey-3));
+}
+
+.mods__mod__title__author span {
+  text-decoration: underline;
+}
+
+.mods__mod__description {
+  grid-area: description;
+}
+
+.mods__mod__button {
+  grid-area: webpage;
+  width: 1.75em;
+  height: 1.75em;
+  place-self: center;
+  margin-inline: 2em 0.5em;
+  background-color: rgb(var(--primary));
+  -webkit-mask-image: url("./assets/link.svg");
+  mask-image: url("./assets/link.svg");
+  border-style: none;
+  cursor: pointer;
+  transition-duration: 0.25s;
+}
+
+.mods__mod__button:hover {
+  transform: scale(1.25);
+}
